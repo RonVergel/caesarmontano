@@ -1,0 +1,19 @@
+body {
+    background-color: yellow;
+    display: flex;           /* Add flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure full viewport height */
+    margin: 0;               /* Remove default margin */
+}
+
+#outputText {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    background: #fffbe6;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: none;
+}

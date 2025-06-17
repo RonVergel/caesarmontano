@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caesar Cipher Decoder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bill Cipher</h1>
+    <textarea id="inputText" placeholder="Enter your encoded message here..."></textarea>
+    
+    <label for="key">Key (Shift Value):</label>
+    <input type="number" id="key" min="1" max="25" value="3">
+    
+    <button onclick="decodeMessage()">Decode</button>
+    
+    <h3>Decoded Message:</h3>
+    <textarea id="outputText" readonly placeholder="Decoded message will appear here..."></textarea>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
