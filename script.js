@@ -4,13 +4,13 @@ function decodeMessage() {
     const outputArea = document.getElementById('outputText');
     let output = '';
 
-    // Error handling for empty input
+   
     if (!input.trim()) {
         outputArea.value = 'Please enter an encoded message.';
         return;
     }
 
-    // Error handling for invalid key
+
     const key = parseInt(keyInput, 10);
     if (isNaN(key) || key < 1 || key > 25) {
         outputArea.value = 'Please enter a valid key (1-25).';
