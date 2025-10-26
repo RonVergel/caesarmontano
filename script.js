@@ -1,4 +1,4 @@
-1   function decodeMessage() {
+function decodeMessage() {
     const input = document.getElementById('inputText').value;
     const keyInput = document.getElementById('key').value;
     const outputArea = document.getElementById('outputText');
@@ -32,3 +32,6 @@
 
     outputArea.value = output;
 }
+
+// Ensure inline onclick can find the function
+window.decodeMessage = decodeMessage;
