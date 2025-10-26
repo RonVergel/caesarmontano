@@ -1,29 +1,31 @@
-function decodeMessage() {
+1   function decodeMessage() {
     const input = document.getElementById('inputText').value;
     const keyInput = document.getElementById('key').value;
     const outputArea = document.getElementById('outputText');
     let output = '';
 
-   
     if (!input.trim()) {
         outputArea.value = 'Please enter an encoded message.';
         return;
     }
 
-
-    const key = parseInt(keyInput, 10);
-    if (isNaN(key) || key < 1 || key > 25) {
-        outputArea.value = 'Please enter a valid key (1-25).';
+    let key = parseInt(keyInput, 10);
+    if (isNaN(key)) {
+        outputArea.value = 'Please enter a valid key.';
         return;
     }
 
-    // Caesar cipher decoding
+    // Normalize key to 0..25
+    key = ((key % 26) + 26) % 26;
+
+    // Caesar cipher decoding:
+    // To reverse a left shift (-key) used during encoding, we add the key here.
     for (let i = 0; i < input.length; i++) {
         let c = input[i];
-        if (c.match(/[a-z]/i)) {
-            let code = input.charCodeAt(i);
-            let base = (code >= 65 && code <= 90) ? 65 : 97;
-            c = String.fromCharCode(((code - base - key + 26) % 26) + base);
+        if (/[a-z]/i.test(c)) {
+            const code = input.charCodeAt(i);
+            const base = (code >= 65 && code <= 90) ? 65 : 97;
+            c = String.fromCharCode(((code - base + key) % 26) + base);
         }
         output += c;
     }
